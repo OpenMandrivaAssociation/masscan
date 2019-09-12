@@ -26,11 +26,11 @@ make %{?_smp_mflags} CFLAGS="%{optflags}" CXXFLAGS="%{optflags}"
 %install
 mkdir -p %{buildroot}%{_bindir}/
 install -pm 0755 bin/masscan %{buildroot}%{_bindir}/%{name}
-mkdir -p %{buildroot}%{_docdir}/man8
-cp -a doc/masscan.8 %{buildroot}%{_docdir}/man8
+mkdir -p %{buildroot}%{_mandir}/man8
+install -pm 0755 doc/masscan.8 %{buildroot}%{_mandir}/man8/masscan.8
 
 %files
 %license LICENSE
 %doc VULNINFO.md README.md
 %{_bindir}/masscan
-%{_docdir}/man8/masscan.8
+%{_mandir}/man8/masscan.*
