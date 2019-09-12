@@ -8,7 +8,7 @@ License:	BSD
 URL:		https://github.com/robertdavidgraham/masscan
 Source0:        https://github.com/robertdavidgraham/masscan/releases/download/%{version}/%{name}-%{version}.tar.gz
 
-BuildRequires:	clang git
+BuildRequires:	git
 BuildRequires:	pkgconfig(libpcap)
 
 
@@ -22,7 +22,7 @@ scanrand, unicornscan, and ZMap, using asynchronous transmission.
 sed -i 's/\r$//' VULNINFO.md
 
 %build
-%make
+%make CC=%{__cc}
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
