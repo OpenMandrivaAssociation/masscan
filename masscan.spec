@@ -21,7 +21,7 @@ scanrand, unicornscan, and ZMap, using asynchronous transmission.
 sed -i 's/\r$//' VULNINFO.md
 
 %build
-make %{?_smp_mflags} CFLAGS="%{optflags}" CXXFLAGS="%{optflags}"
+%make
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
