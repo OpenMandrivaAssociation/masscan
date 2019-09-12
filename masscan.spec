@@ -8,6 +8,7 @@ License:	BSD
 URL:		https://github.com/robertdavidgraham/masscan
 Source0:        https://github.com/robertdavidgraham/masscan/releases/download/%{version}/%{name}-%{version}.tar.gz
 
+BuildRequires:	clang git
 BuildRequires:	pkgconfig(libpcap)
 
 
