@@ -16,24 +16,18 @@ It is a faster port scan that produces results similar to nmap,
 the most famous port scanner. Internally, it operates more like
 scanrand, unicornscan, and ZMap, using asynchronous transmission.
 
-
 %prep
 %setup -q
-#patch0 -p1 -b .secondary
-#patch1 -p1
 sed -i 's/\r$//' VULNINFO.md
-
 
 %build
 make %{?_smp_mflags} CFLAGS="%{optflags}" CXXFLAGS="%{optflags}"
-
 
 %install
 mkdir -p %{buildroot}%{_bindir}/
 install -pm 0755 bin/masscan %{buildroot}%{_bindir}/%{name}
 mkdir -p %{buildroot}%{_docdir}/man8
 cp -a doc/masscan.8 %{buildroot}%{_docdir}/man8
-
 
 %files
 %license LICENSE
